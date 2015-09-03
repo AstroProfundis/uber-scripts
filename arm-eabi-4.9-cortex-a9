@@ -76,6 +76,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --program-transform-name='s&^&arm-eabi-&' \
             --with-gcc-version=UBER \
             --with-pkgversion='UBERTC-4.9.4' \
+            --enable-languages=c,c++ \
             --with-binutils-version=uber \
             --with-gmp-version=uber \
             --with-mpfr-version=uber \
