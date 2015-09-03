@@ -71,7 +71,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
 ./configure $PREFIX $UBERROOT \
             --host=x86_64-linux-gnu \
             --build=x86_64-linux-gnu \
-            --target=arm-eabi \
+            --target=arm-cortex_a9-linux-gnueabihf \
             --program-transform-name='s&^&arm-eabi-&' \
             --with-gcc-version=UBER \
             --with-pkgversion='UBERTC-4.9.4' \
@@ -82,19 +82,28 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --with-gdb-version=uber \
             --with-cloog-version=uber \
             --with-isl-version=uber \
+            --enable-cloog-backend=isl \
             --enable-graphite=yes \
-            --enable-threads \
+            --enable-threads=posix \
             --enable-ld=default \
+            --enable-target-optspace \
             --disable-option-checking \
             --disable-docs \
             --disable-nls \
+            --disable-libmudflap \
+            --disable-libgomp \
+            --disable-libssp \
+            --disable-libquadmath \
+            --disable-libquadmath-support \
+            --disable-libsanitizer \
             --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' \
             --disable-bootstrap \
             --quiet \
             "--enable-eh-frame-hdr-for-static" \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
             --disable-werror \
-            --with-float=soft \
+            --with-float=hard \
+            --enable-long-long \
             --with-fpu=neon \
             --with-cpu=cortex-a9 \
             --with-tune=cortex-a9;
