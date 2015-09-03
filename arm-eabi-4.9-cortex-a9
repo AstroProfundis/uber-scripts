@@ -71,7 +71,8 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
 ./configure $PREFIX $UBERROOT \
             --host=x86_64-linux-gnu \
             --build=x86_64-linux-gnu \
-            --target=arm-cortex_a9-linux-gnueabihf \
+            --with-mode=thumb \
+            --target=arm-eabi \
             --program-transform-name='s&^&arm-eabi-&' \
             --with-gcc-version=UBER \
             --with-pkgversion='UBERTC-4.9.4' \
