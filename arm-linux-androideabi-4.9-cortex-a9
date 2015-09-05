@@ -71,6 +71,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
 ./configure $PREFIX $UBERROOT \
             --host=x86_64-linux-gnu \
             --build=x86_64-linux-gnu \
+            --with-mode=thumb \
             --target=arm-linux-androideabi \
             --program-transform-name='s&^&arm-linux-androideabi-&' \
             --with-gcc-version=UBER \
@@ -86,11 +87,12 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --with-system-zlib \
             --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
+            --enable-cloog-backend=isl \
             --enable-graphite=yes \
             "--enable-eh-frame-hdr-for-static" \
             --enable-initfini-array \
             --enable-gold=default \
-            --enable-threads \
+            --enable-threads=posix \
             --enable-multilib \
             --with-libexpat \
             --with-python \
@@ -98,12 +100,19 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --with-gnu-as \
             --disable-werror \
             --disable-option-checking \
+            --disable-docs \
+            --disable-nls \
+            --disable-libmudflap \
+            --disable-libssp \
+            --disable-libquadmath-support \
+            --disable-libsanitizer \
             --disable-bootstrap \
             --disable-libsanitizer \
             --disable-libgomp \
             --quiet \
             --enable-plugins \
             --with-float=hard \
+            --enable-long-long \
             --with-fpu=neon \
             --with-cpu=cortex-a9 \
             --with-tune=cortex-a9;
