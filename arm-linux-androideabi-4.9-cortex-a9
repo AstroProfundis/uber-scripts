@@ -110,7 +110,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --disable-libsanitizer \
             --disable-libgomp \
             --quiet \
-            --disable-plugins \
+            --enable-plugins \
             --with-float=soft \
             --enable-long-long \
             --with-fpu=neon \

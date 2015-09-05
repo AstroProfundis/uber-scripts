@@ -104,7 +104,6 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             "--enable-eh-frame-hdr-for-static" \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
             --disable-werror \
-            --disable-plugins \
             --with-float=hard \
             --enable-long-long \
             --with-fpu=neon \
