@@ -111,7 +111,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --disable-libgomp \
             --quiet \
             --enable-plugins \
-            --with-float=hard \
+            --with-float=soft \
             --enable-long-long \
             --with-fpu=neon \
             --with-cpu=cortex-a9 \
