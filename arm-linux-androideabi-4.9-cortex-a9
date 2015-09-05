@@ -83,6 +83,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --with-mpc-version=uber \
             --with-cloog-version=uber \
             --with-isl-version=uber \
+            --with-system-zlib \
             --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
             --enable-graphite=yes \
@@ -102,7 +103,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --disable-libgomp \
             --quiet \
             --enable-plugins \
-            --with-float=soft \
+            --with-float=hard \
             --with-fpu=neon \
             --with-cpu=cortex-a9 \
             --with-tune=cortex-a9;
