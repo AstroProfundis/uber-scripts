@@ -71,7 +71,6 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
 ./configure $PREFIX $UBERROOT \
             --host=x86_64-linux-gnu \
             --build=x86_64-linux-gnu \
-            --with-mode=thumb \
             --target=arm-linux-androideabi \
             --program-transform-name='s&^&arm-linux-androideabi-&' \
             --with-gcc-version=UBER \
@@ -111,7 +110,7 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --disable-libgomp \
             --quiet \
             --enable-plugins \
-            --with-float=soft \
+            --with-float=softfp \
             --enable-long-long \
             --with-fpu=neon \
             --with-cpu=cortex-a9 \
