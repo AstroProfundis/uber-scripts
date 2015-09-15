@@ -93,6 +93,8 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --enable-threads=posix \
             --enable-ld=default \
             --enable-target-optspace \
+            --enable-__cxa_atexit \
+            --enable-initfini-array \
             --disable-option-checking \
             --disable-docs \
             --disable-nls \
