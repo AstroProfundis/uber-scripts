@@ -55,7 +55,6 @@ then
     make $MAKE_FLAGS distclean &> /dev/null;
 fi;
 export UBER_PATH=$DIR/out/arm-linux-androideabi-4.9-cortex-a9;
-export PREFIX=--prefix=$UBER_PATH;
 if [ -d "$UBER_PATH" ];
 then
     rm -rf $UBER_PATH;
@@ -69,16 +68,18 @@ cd ../sysroot && rm -rf * && git reset --hard && git fetch uu gcc-4.9 && git che
 export UBERROOT_SRC_PATH=../sysroot/arch-arm;
 export UBERROOT_DEST_PATH=$UBER_PATH;
 cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
-export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
 
 # Build Configuration
-./configure $PREFIX $UBERROOT \
+export CFLAGS_FOR_TARGET=-fexceptions
+export CXXFLAGS_FOR_TARGET=-frtti
+./configure --prefix=$UBER_PATH \
+            --with-sysroot=$UBERROOT_DEST_PATH/arch-arm \
             --host=x86_64-linux-gnu \
             --build=x86_64-linux-gnu \
             --target=arm-linux-androideabi \
             --program-transform-name='s&^&arm-linux-androideabi-&' \
             --with-gcc-version=UBER \
-            --with-pkgversion='UBERTC-4.9.4' \
+            --with-pkgversion='UBER Toolchain - ATR GCC 4.9.4 - Cortex-A9' \
             --with-binutils-version=uber \
             --with-gold-version=uber \
             --with-gmp-version=uber \
@@ -90,13 +91,14 @@ export UBERROOT=--with-sysroot=$UBERROOT_DEST_PATH/arch-arm;
             --with-system-zlib \
             --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
-            --enable-cloog-backend=isl \
             --enable-graphite=yes \
             "--enable-eh-frame-hdr-for-static" \
             --enable-initfini-array \
             --enable-gold=default \
             --enable-threads=posix \
             --enable-multilib \
+            --enable-__cxa_atexit \
+            --enable-libstdc__-v3 \
             --with-libexpat \
             --with-python \
             --with-gnu-ld \
