@@ -71,8 +71,6 @@ export UBERROOT_DEST_PATH=$UBER_PATH;
 cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
 
 # Build Configuration
-export CFLAGS_FOR_TARGET=-fexceptions
-export CXXFLAGS_FOR_TARGET=-frtti
 ./configure --prefix=$UBER_PATH \
             --with-sysroot=$UBERROOT_DEST_PATH/arch-arm \
             --host=x86_64-linux-gnu \
@@ -95,7 +93,6 @@ export CXXFLAGS_FOR_TARGET=-frtti
             --enable-target-optspace \
             --enable-__cxa_atexit \
             --enable-initfini-array \
-            --enable-libstdc__-v3 \
             --disable-option-checking \
             --disable-docs \
             --disable-nls \

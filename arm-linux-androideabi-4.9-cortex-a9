@@ -70,8 +70,6 @@ export UBERROOT_DEST_PATH=$UBER_PATH;
 cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
 
 # Build Configuration
-export CFLAGS_FOR_TARGET=-fexceptions
-export CXXFLAGS_FOR_TARGET=-frtti
 ./configure --prefix=$UBER_PATH \
             --with-sysroot=$UBERROOT_DEST_PATH/arch-arm \
             --host=x86_64-linux-gnu \
@@ -88,7 +86,6 @@ export CXXFLAGS_FOR_TARGET=-frtti
             --with-mpc-version=uber \
             --with-cloog-version=uber \
             --with-isl-version=uber \
-            --with-system-zlib \
             --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
             --enable-graphite=yes \
@@ -98,7 +95,6 @@ export CXXFLAGS_FOR_TARGET=-frtti
             --enable-threads=posix \
             --enable-multilib \
             --enable-__cxa_atexit \
-            --enable-libstdc__-v3 \
             --with-libexpat \
             --with-python \
             --with-gnu-ld \
