@@ -77,7 +77,6 @@ cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
             --with-gold-version=uber \
             --with-gmp-version=uber \
             --with-mpfr-version=uber \
-            --with-gdb-version=uber \
             --with-mpc-version=uber \
             --with-cloog-version=uber \
             --with-isl-version=uber \

@@ -79,7 +79,6 @@ cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
             --with-gmp-version=uber \
             --with-mpfr-version=uber \
             --with-mpc-version=uber \
-            --with-gdb-version=uber \
             --with-cloog-version=uber \
             --with-isl-version=uber \
             --enable-threads=posix \
