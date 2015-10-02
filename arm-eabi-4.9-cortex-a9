@@ -99,9 +99,9 @@ cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
             --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' \
             --disable-bootstrap \
             --quiet \
-            "--enable-eh-frame-hdr-for-static" \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
             --disable-werror \
+            --disable-shared \
             --with-float=hard \
             --enable-long-long \
             --with-fpu=neon \

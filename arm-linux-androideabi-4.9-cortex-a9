@@ -81,8 +81,8 @@ cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
             --with-cloog-version=uber \
             --with-isl-version=uber \
             --with-gxx-include-dir=$UBERROOT_DEST_PATH/c++ \
-            "--enable-eh-frame-hdr-for-static" \
             --enable-initfini-array \
+            --enable-gnu-indirect-function \
             --enable-gold=default \
             --enable-threads=posix \
             --enable-multilib \
@@ -92,6 +92,7 @@ cp -R $UBERROOT_SRC_PATH -f $UBERROOT_DEST_PATH;
             --with-gnu-ld \
             --with-gnu-as \
             --disable-werror \
+            --disable-shared \
             --disable-option-checking \
             --disable-docs \
             --disable-nls \
